@@ -1,0 +1,16 @@
+{
+  "name": "oldcars",
+  "version": "1.0.0",
+  "description": "My own minimal fullstack template for personal projects purposes. Feel free to fork and personalize it at your convenience. Special thanks to https://github.com/FlorenceBuchelet/, whose great work on her project 'Tamilochi' served as a model for the back-end part.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon main.jsx",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm run dev",
+    "start": "npm run start:frontend & npm run start:backend"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
