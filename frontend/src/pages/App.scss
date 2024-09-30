@@ -1,0 +1,74 @@
+@import "Variable.scss";
+
+.navbar {
+  font-size: 2rem;
+  width: 90%;
+  justify-content: center;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  li {
+    text-align: center;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+
+  li:hover {
+    color: #0c364e;
+    transform: rotate(10deg);
+    transition: transform 0.9s ease;
+
+    transition: box-shadow 1s ease;
+    border: 3px solid #831820;
+    transition: border 0.3s ease;
+    border-radius: 20%;
+    background-color: #a4cbdc;
+    transition: background-color 1s ease;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+}
+
+button {
+  background-color: transparent;
+  border-style: none;
+  font-size: 2rem;
+}
+
+
+@keyframes garage {
+  0% {
+    background-image: url("../assets/fordDealership.png");
+    opacity: 1;
+    filter: blur(0);
+  }
+  50% {
+    background-image: url("../assets/fordT.jpg");
+    background-size: 40% auto;
+    opacity: 1;
+    filter: blur(0);
+    color: brown;
+  }
+  100% {
+    background-image: url("../assets/xk120.png");
+    background-size: 50% auto;
+    opacity: 1;
+    filter: blur(0);
+    color: rgb(43, 92, 226);
+  }
+}
+
+.garage {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  animation: garage 25s ease-in-out infinite;
+  transition: opacity 1s ease, filter 1s ease;
+  position: absolute;
+  z-index: -1;
+}
