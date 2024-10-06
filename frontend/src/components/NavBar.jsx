@@ -1,33 +1,32 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function NavBar() {
-  const navigate = useNavigate();
+  const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
+  const [menu_class, setMenuClass] = useState("menu hidden");
+  const [isMenuClicked, setMenuClicked] = useState(false);
+
+  function updateMenu() {
+    if (!isMenuClicked) {
+      setBurgerClass("burger-bar clicked");
+      setMenuClass("menu visible");
+    } else {
+      setBurgerClass("burger-bar unclicked");
+      setMenuClass("menu hidden");
+    }
+    setMenuClicked(!isMenuClicked);
+  }
 
   return (
-    <section className="navBar">
-      <ul>
-        <li>
-          <button onClick={() => navigate("/")}>
-            <strong>Accueil</strong>
-          </button>
-        </li>
-        <li>
-          <button onClick={() => navigate("/renovation")}>
-            <strong>Restaurations</strong>
-          </button>
-        </li>
-        <li>
-          <button onClick={() => navigate("/events")}>
-            <strong>Événements</strong>
-          </button>
-        </li>
-        <li>
-          <button onClick={() => navigate("/legendarycars")}>
-            <strong>Voitures de légende</strong>
-          </button>
-        </li>
-      </ul>
+    <section>
+      <nav>
+        <div className="burger-menu" onClick={updateMenu}>
+          <div className={burger_class} ></div>
+          <div className={burger_class} ></div>
+          <div className={burger_class} ></div>
+        </div>
+      </nav>
+      <div className={menu_class}></div>
     </section>
   );
 }
